@@ -81,7 +81,7 @@
   <body>
     <div id="loadingSpinner">
       <div class="spinner"></div> Loading Smart School Dashboard...
-	  </div>
+    </div>
 
     <div id="unityContainer">
       <!-- Unity WebGL Canvas and iframe are added inside this container -->
@@ -118,11 +118,16 @@
         companyName: "ManDev",
         productName: "Smart School Dashboard App",
         productVersion: "0.1.0",
+        memorySize: 512,
         webAssemblyStreaming: true,  // Enable WebAssembly streaming
         onProgress: function (progress) {
           if (progress === 1) {
             hideLoadingSpinner();  // Hide spinner when loading is complete
           }
+        },
+        onError: function(error) {
+          console.error("Unity loading error: ", error);
+          hideLoadingSpinner(); // Hide the spinner if there's an error
         },
       });
     </script>
