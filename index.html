@@ -84,9 +84,8 @@
       <div class="spinner"></div> Loading Smart School Dashboard...
     </div>
 
-    <div id="unityContainer">
+    <div id="unityContainer" class="unity-desktop">
       <!-- Unity WebGL Canvas and iframe are added inside this container -->
-      <!--- <iframe id="myIframe" src="" style="border:none;"></iframe> -->
       <canvas id="unity-canvas"></canvas>
     </div>
 
@@ -94,6 +93,7 @@
     <script src="Build/Main.loader.js"></script>
 
     <script>
+      var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
 
       // Hide the loading spinner once Unity is ready
