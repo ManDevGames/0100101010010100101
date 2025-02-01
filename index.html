@@ -26,19 +26,6 @@
         position: relative; /* Container for Unity and iframe */
       }
 
-      /* Iframe positioned over Unity Canvas */
-      #myIframe {
-        position: absolute;
-        margin-left: 25%; /* To center it! */
-        margin-right: auto;
-        width: 0%;
-        background: transparent;
-        zoom: 75%;
-        height: 0%;
-        border: none;
-        z-index: 2; /* Iframe above Unity canvas! */
-      }
-
       /* Unity canvas takes full width and height */
       #unity-canvas {
         position: absolute;
@@ -127,7 +114,7 @@
           }
         },
         onError: function(error) {
-          console.error("Unity loading error: ", error);
+          console.error("Loading error: ", error);
           hideLoadingSpinner(); // Hide the spinner if there's an error
         },
       });
